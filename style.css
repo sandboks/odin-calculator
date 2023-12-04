@@ -39,3 +39,57 @@ body {
 a {
     color: white;
 }
+
+.calcSection {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    width: 100%;
+    max-height: 90vh;
+    max-width: 90vh;
+}
+
+.calcContainer {
+    height: 100%;
+    width: 100%;
+
+    max-height: 90vh;
+    max-width: 90vh;
+    
+    background-color: darkgray;
+}
+
+.buttonsSection {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+}
+
+.buttonsRow {
+    display: flex;
+    flex: 1;
+}
+
+.buttonsSection button {
+    /* fill out the row */
+    /*
+    display: flex;
+    */
+    flex: 1;
+    
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+
+    /*
+    width: 100%; 
+    padding: 48px 92px;
+    */
+}
+
+button.doubleButton {
+    color:red;
+    flex-grow: 2.2;
+}

@@ -1,3 +1,36 @@
+const operators = ["ADD", "SUBTRACT", "MULTIPLY", "DIVIDE"];
+let a = 0;
+let b = 0;
+let currentOperator = "";
+let currentDisplay = "0";
+
+function GetAnswer(a, b, operator) {
+    switch (operator) {
+        case "ADD":
+            return (a + b);
+            break;
+        case "SUBTRACT":
+            return (a - b);
+        case "MULTIPLY":
+            return (a * b);
+        case "DIVIDE":
+            return (a / b);
+    };
+}
+
+function operate() {
+    let answer = GetAnswer(a, b, operator);
+    a = answer;
+    b = null;
+    currentOperator = "";
+    UpdateDisplay(answer);
+}
+
+function UpdateDisplay(s) {
+    currentDisplay = s;
+    alert("this is where the display should get updated!");
+}
+
 // UI logic
 
 // buttons is a node list. It looks and acts much like an array.
@@ -16,17 +49,5 @@ buttons.forEach((button) => {
                 alert("Haven't done this one yet!");
             });
     }
-  // and for each one we add a 'click' listener
-    button.addEventListener('click', () => {
-        //alert(button.id);
-        // assign the player's input from the button
-        for (let i = 0; i < choices.length; i++) {
-            if (choices[i] === button.id.toUpperCase()) {
-                playerInput = i
-            }
-        }
-
-        // trigger playing a round of the game
-        playRound(playerInput, getComputerChoice())
-    });
 });
+
