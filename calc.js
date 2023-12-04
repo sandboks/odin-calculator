@@ -46,7 +46,7 @@ buttons.forEach((button) => {
             break;
         default:
             button.addEventListener("click",  () => {
-                alert("Haven't done this one yet!");
+                alert("Not implemented: [" + button.textContent + "]");
             });
     }
 });
