@@ -1,34 +1,56 @@
-const operators = ["ADD", "SUBTRACT", "MULTIPLY", "DIVIDE"];
+const operators = ["+", "-", "*", "/"];
 let a = 0;
-let b = 0;
+let b = null;
 let currentOperator = "";
 let currentDisplay = "0";
 
+function HaveOperator() {
+    return currentOperator != "";
+}
+
 function GetAnswer(a, b, operator) {
     switch (operator) {
-        case "ADD":
+        case "+":
             return (a + b);
             break;
-        case "SUBTRACT":
+        case "-":
             return (a - b);
-        case "MULTIPLY":
+        case "*":
             return (a * b);
-        case "DIVIDE":
+        case "/":
             return (a / b);
     };
 }
 
 function operate() {
-    let answer = GetAnswer(a, b, operator);
+    let answer = GetAnswer(a, b, currentOperator);
     a = answer;
     b = null;
     currentOperator = "";
-    UpdateDisplay(answer);
+    UpdateDisplay();
 }
 
-function UpdateDisplay(s) {
-    currentDisplay = s;
-    alert("this is where the display should get updated!");
+function UpdateDisplay() {
+    currentDisplay = a;
+    if (HaveOperator()) {
+        currentDisplay += " " + currentOperator;
+        if (b != null)
+            currentDisplay += " " + b;
+    }
+    //alert("this is where the display should get updated!");
+
+
+    document.getElementById('displayText').textContent = currentDisplay;
+}
+
+function AssignOperator(x) {
+    if (HaveOperator()) {
+        if (b != null) { // if we already entered b, then perform the operation now and then assign the new operator
+            operate();
+        }
+    }
+    currentOperator = x;
+    UpdateDisplay();
 }
 
 // UI logic
@@ -51,3 +73,26 @@ buttons.forEach((button) => {
     }
 });
 
+document.addEventListener("keypress", function(event){
+    var x = event.key;
+    
+    if (!isNaN(x)) {
+        // NUMBER INPUT
+        if (!HaveOperator()) {
+            a = (Number(a)*10) + Number(x);
+        }
+        else {
+            b = (Number(b)*10) + Number(x);
+        }
+        UpdateDisplay();
+    }
+    else if (operators.includes(x)) {
+        AssignOperator(x);
+    }
+    else {
+        alert(x);
+        return;
+    }
+    
+    //alert(x);
+});
