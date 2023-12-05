@@ -65,19 +65,9 @@ const buttons = document.querySelectorAll('button');
 
 // we use the .forEach method to iterate through each button
 buttons.forEach((button) => {
-    switch(button.id.toUpperCase()) {
-        case "ROCK":
-            button.addEventListener("click",  () => {
-                alert("Rock bby");
-            });
-            break;
-        default:
-            button.addEventListener("click",  () => {
-                ProcessInput(button.textContent);
-                
-                //
-            });
-    }
+    button.addEventListener("click",  () => {
+        ProcessInput(button.textContent);
+    });
 });
 
 document.addEventListener("keypress", function(event){
