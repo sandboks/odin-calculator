@@ -3,6 +3,7 @@ let a = 0;
 let b = null;
 let currentOperator = "";
 let currentDisplay = "0";
+let displayingAnswer = false;
 
 function HaveOperator() {
     return currentOperator != "";
@@ -23,10 +24,14 @@ function GetAnswer(a, b, operator) {
 }
 
 function operate() {
+    if (!HaveOperator() || b == null)
+        return;
+    
     let answer = GetAnswer(a, b, currentOperator);
     a = answer;
     b = null;
     currentOperator = "";
+    displayingAnswer = true;
     UpdateDisplay();
 }
 
@@ -78,16 +83,29 @@ document.addEventListener("keypress", function(event){
     
     if (!isNaN(x)) {
         // NUMBER INPUT
-        if (!HaveOperator()) {
-            a = (Number(a)*10) + Number(x);
+        if (displayingAnswer) {
+            a = Number(x);
+            displayingAnswer = false;
         }
         else {
-            b = (Number(b)*10) + Number(x);
+            if (!HaveOperator()) {
+                a = (Number(a)*10) + Number(x);
+            }
+            else {
+                b = (Number(b)*10) + Number(x);
+            }
         }
+        
         UpdateDisplay();
     }
     else if (operators.includes(x)) {
+        if (displayingAnswer)
+            displayingAnswer = false;
+        
         AssignOperator(x);
+    }
+    else if (x == "Enter") {
+        operate();
     }
     else {
         alert(x);
