@@ -46,8 +46,8 @@ a {
 
     height: 100%;
     width: 100%;
-    max-height: 90vh;
-    max-width: 90vh;
+    max-height: 70vh;
+    max-width: 70vh;
 }
 
 .calcDisplay {
@@ -70,10 +70,10 @@ a {
     /*
     height: 100%;
     width: 100%;
-    */
 
-    max-height: 90vh;
-    max-width: 90vh;
+    max-height: 70vh;
+    max-width: 70vh;
+    */
     
     background-color: darkgray;
 }

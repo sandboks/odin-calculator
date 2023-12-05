@@ -73,7 +73,9 @@ buttons.forEach((button) => {
             break;
         default:
             button.addEventListener("click",  () => {
-                alert("Not implemented: [" + button.textContent + "]");
+                ProcessInput(button.textContent);
+                
+                //
             });
     }
 });
@@ -81,6 +83,10 @@ buttons.forEach((button) => {
 document.addEventListener("keypress", function(event){
     var x = event.key;
     
+    ProcessInput(x);
+});
+
+function ProcessInput(x) {
     if (!isNaN(x)) {
         // NUMBER INPUT
         if (displayingAnswer) {
@@ -104,13 +110,11 @@ document.addEventListener("keypress", function(event){
         
         AssignOperator(x);
     }
-    else if (x == "Enter") {
+    else if (x == "Enter" || x == "=") {
         operate();
     }
     else {
-        alert(x);
+        alert("Not implemented: [" + x + "]");
         return;
     }
-    
-    //alert(x);
-});
+}
