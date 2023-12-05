@@ -50,9 +50,27 @@ a {
     max-width: 90vh;
 }
 
+.calcDisplay {
+    flex-grow: 1;
+    
+}
+
+.displayRow {
+    flex: 1;
+    background-color: black;
+    color: white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
 .calcContainer {
+    flex-grow: 4; /* This needs to be the number of rows, update if necessary */
+    /*
     height: 100%;
     width: 100%;
+    */
 
     max-height: 90vh;
     max-width: 90vh;
