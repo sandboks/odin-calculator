@@ -48,6 +48,8 @@ a {
     width: 100%;
     max-height: 70vh;
     max-width: 50vh;
+    min-height: 14em;
+    min-width: 10em;
 
     border-radius: 1.5em;
     overflow: hidden;
