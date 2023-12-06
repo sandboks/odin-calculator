@@ -1,5 +1,7 @@
 const operators = ["+", "-", "*", "/"];
 const specialInputs = ["Enter", "=", "c", "."];
+const roundingAmount = 1000000000;
+
 let a = 0;
 let b = null;
 let currentOperator = "";
@@ -29,6 +31,7 @@ function operate() {
         return;
     
     let answer = GetAnswer(Number(a), Number(b), currentOperator);
+    answer = Math.round(answer * roundingAmount)/roundingAmount;
     a = answer;
     b = null;
     currentOperator = "";
@@ -64,22 +67,31 @@ function AssignOperator(x) {
             operate();
         }
     }
+
+    if ((a + "").slice(-1) == ".")
+        a += "0";
+
     currentOperator = x;
     UpdateDisplay();
 }
 
 function AddDecimalPoint() {
-    if (b == null) {
-        if (Number(a) % 1 != 0 || (a + "").slice(-1) == ".")
+    if (HaveOperator()) {
+        if (b == null) {
+            b = "0.";
+        }
+        else {
+            if (Number(b) % 1 != 0 || (b + "").slice(-1) == ".")
             return;
-    
-        a += ".";
+
+            b += ".";
+        }
     }
     else {
-        if (Number(b) % 1 != 0 || (b + "").slice(-1) == ".")
+        if (Number(a) % 1 != 0 || (a + "").slice(-1) == ".")
             return;
-    
-        b += ".";
+
+        a += ".";
     }
     UpdateDisplay();
 }
@@ -111,7 +123,7 @@ function ProcessInput(x) {
         }
         else {
             if (!HaveOperator()) { // we're still on "a"
-                if (a.includes(".")) {
+                if ((a + "").includes(".")) {
                     a += x;
                 }
                 else {
@@ -119,7 +131,9 @@ function ProcessInput(x) {
                 }
             }
             else {
-                if (b != null && b.includes(".")) {
+                if (b == null)
+                    b = x;
+                else if ((b + "").includes(".")) {
                     b += x;
                 }
                 else {
