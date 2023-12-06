@@ -1,4 +1,5 @@
 const operators = ["+", "-", "*", "/"];
+const specialInputs = ["Enter", "=", "c", "."];
 let a = 0;
 let b = null;
 let currentOperator = "";
@@ -27,7 +28,7 @@ function operate() {
     if (!HaveOperator() || b == null)
         return;
     
-    let answer = GetAnswer(a, b, currentOperator);
+    let answer = GetAnswer(Number(a), Number(b), currentOperator);
     a = answer;
     b = null;
     currentOperator = "";
@@ -53,6 +54,8 @@ function UpdateDisplay() {
 
 
     document.getElementById('displayText').textContent = currentDisplay;
+
+    //alert(a);
 }
 
 function AssignOperator(x) {
@@ -62,6 +65,22 @@ function AssignOperator(x) {
         }
     }
     currentOperator = x;
+    UpdateDisplay();
+}
+
+function AddDecimalPoint() {
+    if (b == null) {
+        if (Number(a) % 1 != 0 || (a + "").slice(-1) == ".")
+            return;
+    
+        a += ".";
+    }
+    else {
+        if (Number(b) % 1 != 0 || (b + "").slice(-1) == ".")
+            return;
+    
+        b += ".";
+    }
     UpdateDisplay();
 }
 
@@ -91,11 +110,21 @@ function ProcessInput(x) {
             displayingAnswer = false;
         }
         else {
-            if (!HaveOperator()) {
-                a = (Number(a)*10) + Number(x);
+            if (!HaveOperator()) { // we're still on "a"
+                if (a.includes(".")) {
+                    a += x;
+                }
+                else {
+                    a = (Number(a)*10) + Number(x);
+                }
             }
             else {
-                b = (Number(b)*10) + Number(x);
+                if (b != null && b.includes(".")) {
+                    b += x;
+                }
+                else {
+                    b = (Number(b)*10) + Number(x);
+                }
             }
         }
         
@@ -107,11 +136,19 @@ function ProcessInput(x) {
         
         AssignOperator(x);
     }
-    else if (x == "Enter" || x == "=") {
-        operate();
-    }
-    else if (x == "c") {
-        Clear();
+    else if (specialInputs.includes(x)) {
+        switch (x) {
+            case "Enter":
+            case "=":
+                operate();
+                break;
+            case "c":
+                Clear();
+                break;
+            case ".":
+                AddDecimalPoint();
+                break;
+        }
     }
     else {
         alert("Not implemented: [" + x + "]");
