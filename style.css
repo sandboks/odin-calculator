@@ -55,6 +55,14 @@ a {
     border: 2px solid black;
 }
 
+.calcSection {
+    font-size: 1.5em;
+}
+
+.calcSection button {
+    font-size: 1em;
+}
+
 .calcDisplay {
     flex-grow: 1;
     
@@ -66,8 +74,18 @@ a {
     color: white;
     display:flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
     height: 100%;
+
+    padding: 0px 24px;
+    margin: 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.displayRow {
+    font-size: 1em;
 }
 
 .calcContainer {
@@ -115,7 +133,6 @@ a {
 }
 
 div.doubleButton {
-    color:red;
     flex-grow: 2;
     flex-basis: 0;
 }

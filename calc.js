@@ -35,6 +35,13 @@ function operate() {
     UpdateDisplay();
 }
 
+function Clear() {
+    a = 0;
+    b = null;
+    currentOperator = "";
+    UpdateDisplay();
+}
+
 function UpdateDisplay() {
     currentDisplay = a;
     if (HaveOperator()) {
@@ -103,8 +110,20 @@ function ProcessInput(x) {
     else if (x == "Enter" || x == "=") {
         operate();
     }
+    else if (x == "c") {
+        Clear();
+    }
     else {
         alert("Not implemented: [" + x + "]");
         return;
     }
 }
+
+// Change values when window is resized 
+window.onresize = function() { 
+    //alert("resize");     
+    // Setting the current height & width 
+    // to the elements 
+    //height.innerHTML = window.innerHeight; 
+    //width.innerHTML = window.innerWidth; 
+};
