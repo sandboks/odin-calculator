@@ -80,9 +80,15 @@ a {
     padding: 0px 24px;
 }
 
+@font-face {
+    font-family:'digital-clock-font';
+    src: url('digital.ttf');
+}
+
 .displayRow {
     flex: 1;
     background-color: #1d2127;
+    font-family:'digital-clock-font';
     color: white;
     display:flex;
     align-items: center;
@@ -100,7 +106,7 @@ a {
 }
 
 .displayRow {
-    font-size: 1em;
+    font-size: 1.5em;
 }
 
 .calcContainer {
