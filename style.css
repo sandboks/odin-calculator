@@ -46,15 +46,20 @@ a {
 
     height: 100%;
     width: 100%;
-    max-height: 70vh;
-    max-width: 50vh;
+    max-height: 60vh;
+    max-width: 42.857vh;
     min-height: 14em;
     min-width: 10em;
+    aspect-ratio: 5/7;
 
     border-radius: 1.5em;
     overflow: hidden;
 
     border: 2px solid black;
+    
+    background-color: #3a4e6b;
+
+    padding: 1em 0px;
 }
 
 .calcSection {
@@ -66,20 +71,28 @@ a {
 }
 
 .calcDisplay {
+    display: flex;
     flex-grow: 1;
     
+    justify-content: center;
+    align-items: center;
+
+    padding: 0px 24px;
 }
 
 .displayRow {
     flex: 1;
-    background-color: black;
+    background-color: #1d2127;
     color: white;
     display:flex;
     align-items: center;
     justify-content: right;
+    /*
     height: 100%;
+    */
 
-    padding: 0px 24px;
+    border-radius: 12px;
+    padding: 24px 24px;
     margin: 0;
 
     overflow: hidden;
@@ -92,20 +105,15 @@ a {
 
 .calcContainer {
     flex-grow: 4; /* This needs to be the number of rows, update if necessary */
-    /*
-    height: 100%;
-    width: 100%;
 
-    max-height: 70vh;
-    max-width: 70vh;
-    */
-    
-    background-color: darkgray;
+    padding: 12px;
 }
 
 .buttonsSection {
     display: flex;
     flex-direction: column;
+
+    gap: 6px;
 
     height: 100%;
 }
@@ -113,6 +121,8 @@ a {
 .buttonsRow {
     display: flex;
     flex: 1;
+
+    gap: 6px;
 }
 
 .buttonsSection button {
@@ -124,6 +134,11 @@ a {
     width: 100%; 
     height: 100%;
 
+    border-radius: 50%;
+
+    color: white;
+    background-color: #535663;
+
     /*
     width: 100%; 
     padding: 48px 92px;
@@ -131,12 +146,20 @@ a {
 }
 
 button.operatorButton {
-    background-color: orange;
+    background-color: #353d47;
+}
+
+button.digitButton {
+    border-radius: 15%;
 }
 
 div.doubleButton {
     flex-grow: 2;
     flex-basis: 0;
+}
+
+div.doubleButton .digitButton {
+    border-radius: 7.5%/15%;
 }
 
 div.buttonContainer {
