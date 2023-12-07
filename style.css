@@ -60,6 +60,7 @@ a {
     background-color: #3a4e6b;
 
     padding: 1em 0px;
+    padding-bottom: 1.5em;
 }
 
 .calcSection {
@@ -174,6 +175,8 @@ div.buttonContainer {
     border:0;
     margin:0;
     flex-basis: 0;
+
+    aspect-ratio: 1/1;
     
     /*
     border: 1px solid gray;
