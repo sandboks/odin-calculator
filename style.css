@@ -173,12 +173,20 @@ a {
     transform: scale(1.05);
 }
 
+.buttonsSection button:active {
+    background-color: #4b4e5a;
+}
+
 button.operatorButton {
     background-color: #1779a8;
 }
 
 button.operatorButton:hover {
     background-color: #20a4e0;
+}
+
+button.operatorButton:active {
+    background-color: #125f83;
 }
 
 button.digitButton {
