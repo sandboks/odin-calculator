@@ -1,5 +1,5 @@
 const operators = ["+", "-", "*", "×", "x", "/", "÷"];
-const specialInputs = ["Enter", "=", "c", "."];
+const specialInputs = ["Enter", "=", "c", ".", "±", "⌫"];
 const roundingAmount = 1000000000;
 
 let a = 0;
@@ -109,6 +109,43 @@ function AddDecimalPoint() {
     UpdateDisplay();
 }
 
+function PlusMinus() {
+    if (HaveOperator()) {
+        if (b != null)
+            b *= -1;
+    }
+    else {
+        a *= -1;
+    }
+    UpdateDisplay();
+}
+
+function Backspace() {
+    if (displayingAnswer)
+        return;
+    
+    if (HaveOperator()) {
+        if (b == null) {
+            AssignOperator("");
+        }
+        else {
+            b = ("" + b).slice(0, -1)
+            if (b == "")
+                b = null;
+        }
+    }
+    else 
+    {
+        if ((a + "").length == 1)
+            a = 0;
+        else if (a != 0) {
+            a = ("" + a).slice(0, -1)
+        }
+    }
+
+    UpdateDisplay();
+}
+
 // UI logic
 
 // buttons is a node list. It looks and acts much like an array.
@@ -174,6 +211,12 @@ function ProcessInput(x) {
                 break;
             case ".":
                 AddDecimalPoint();
+                break;
+            case "±":
+                PlusMinus();
+                break;
+            case "⌫":
+                Backspace();
                 break;
         }
     }
