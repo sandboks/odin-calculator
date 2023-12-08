@@ -1,5 +1,5 @@
 const operators = ["+", "-", "*", "×", "x", "/", "÷"];
-const specialInputs = ["Enter", "=", "c", ".", "±", "⌫"];
+const specialInputs = ["Enter", "=", "c", ".", "±", "⌫",];
 const roundingAmount = 1000000000;
 
 let a = 0;
@@ -221,7 +221,7 @@ function ProcessInput(x) {
         }
     }
     else {
-        alert("Not implemented: [" + x + "]");
+        //alert("Not implemented: [" + x + "]");
         return;
     }
 }
