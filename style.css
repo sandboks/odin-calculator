@@ -76,12 +76,6 @@ a {
     font-size: 1.5em;
 }
 
-.calcSection button {
-    font-size: 1em;
-    cursor: pointer;
-    border: none;
-}
-
 .topSection {
     height: 1.5em; /* same as the border-radius */
     /*background-color: orange;*/
@@ -161,14 +155,30 @@ a {
     color: white;
     background-color: #535663;
 
+
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+
+    transition-duration: 0.1s;
+
     /*
     width: 100%; 
     padding: 48px 92px;
     */
 }
 
+.buttonsSection button:hover {
+    background-color: #7b7f92;
+    transform: scale(1.05);
+}
+
 button.operatorButton {
     background-color: #1779a8;
+}
+
+button.operatorButton:hover {
+    background-color: #20a4e0;
 }
 
 button.digitButton {

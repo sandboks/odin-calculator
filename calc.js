@@ -1,4 +1,4 @@
-const operators = ["+", "-", "*", "×", "/", "÷"];
+const operators = ["+", "-", "*", "×", "x", "/", "÷"];
 const specialInputs = ["Enter", "=", "c", "."];
 const roundingAmount = 1000000000;
 
@@ -64,6 +64,11 @@ function UpdateDisplay() {
 }
 
 function AssignOperator(x) {
+    if (["x", "*"].includes(x))
+        x = "×";
+    if (["/", "÷"].includes(x))
+        x = "÷";
+
     if (HaveOperator()) {
         if (b != null) { // if we already entered b, then perform the operation now and then assign the new operator
             operate();
