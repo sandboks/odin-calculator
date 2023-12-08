@@ -183,9 +183,17 @@ function ProcessInput(x) {
 
 // Change values when window is resized 
 window.onresize = function() { 
-    //alert("resize");     
-    // Setting the current height & width 
-    // to the elements 
-    //height.innerHTML = window.innerHeight; 
-    //width.innerHTML = window.innerWidth; 
+    ScaleCalculatorToWindow();
 };
+
+function ScaleCalculatorToWindow() {
+    document.getElementsByClassName("calcSection")[0].style.transform = "scale(" + 1 + ")";
+    let calcSection = document.querySelector('.calcSection'); 
+    let contentSection = document.querySelector('.content'); 
+    let scale = Math.min((contentSection.offsetHeight / (calcSection.offsetHeight * 1.25)), (contentSection.offsetWidth / (calcSection.offsetWidth * 1.25)));
+    //alert(scale);
+
+    document.getElementsByClassName("calcSection")[0].style.transform = "scale(" + scale + ")";
+}
+
+ScaleCalculatorToWindow();
