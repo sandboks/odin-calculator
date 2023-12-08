@@ -43,11 +43,12 @@ a {
 .calcSection {
     display: flex;
     flex-direction: column;
-
+    /*
     height: 100%;
     width: 100%;
-    max-height: 60vh;
-    max-width: 42.857vh;
+    */
+    max-height: 70vh;
+    max-width: 50vh;
     min-height: 14em;
     min-width: 10em;
     aspect-ratio: 5/7;
@@ -61,6 +62,9 @@ a {
 
     padding: 1em 0px;
     padding-bottom: 1.5em;
+
+    flex-grow: 0;
+    transform: scale(1);
 }
 
 .calcSection {

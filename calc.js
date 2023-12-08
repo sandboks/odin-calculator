@@ -1,4 +1,4 @@
-const operators = ["+", "-", "*", "/"];
+const operators = ["+", "-", "*", "x", "/", "÷"];
 const specialInputs = ["Enter", "=", "c", "."];
 const roundingAmount = 1000000000;
 
@@ -20,8 +20,10 @@ function GetAnswer(a, b, operator) {
         case "-":
             return (a - b);
         case "*":
+        case "x":
             return (a * b);
         case "/":
+        case "÷":
             return (a / b);
     };
 }
