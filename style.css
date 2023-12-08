@@ -74,7 +74,7 @@ a {
     padding: 1em 0px;
     padding-bottom: 1.5em;
     */
-    padding: 0 1em;
+    padding: 1em;
 
     flex-grow: 0;
     transform-origin: top;
@@ -83,11 +83,6 @@ a {
 
 .calcSection {
     font-size: 1.5em;
-}
-
-.topSection {
-    height: 1.5em; /* same as the border-radius */
-    /*background-color: orange;*/
 }
 
 .calcDisplay {
