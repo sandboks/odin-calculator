@@ -1,6 +1,6 @@
 const operators = ["+", "-", "*", "×", "x", "/", "÷"];
 const specialInputs = ["Enter", "=", "c", ".", "±", "⌫",];
-const roundingAmount = 1000000000;
+const roundingDecimalPlaces = 6;
 
 let a = 0;
 let b = null;
@@ -35,7 +35,7 @@ function operate() {
         return;
     
     let answer = GetAnswer(Number(a), Number(b), currentOperator);
-    answer = Math.round(answer * roundingAmount)/roundingAmount;
+    answer = Math.round(answer * Math.pow(10, roundingDecimalPlaces))/Math.pow(10, roundingDecimalPlaces);
     a = answer;
     b = null;
     currentOperator = "";
