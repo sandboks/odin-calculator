@@ -8,6 +8,8 @@ let currentOperator = "";
 let currentDisplay = "0";
 let displayingAnswer = false;
 
+let customColor = "#ffffff";
+
 function HaveOperator() {
     return currentOperator != "";
 }
@@ -181,6 +183,26 @@ function ProcessInput(x) {
     }
 }
 
+const colorPicker = document.getElementById("colorPicker");
+colorPicker.addEventListener("input", (event) => {
+    customColor = event.target.value;
+    RecolorCalculator();
+});
+
+function RecolorCalculator() {
+    //customColor
+    //document.getElementsByClassName("operatorButton");
+
+    document.querySelector(".calcSection").style.borderColor = customColor;
+
+    document.querySelectorAll(".operatorButton").forEach(function(button) {
+        //alert("test");
+        button.style.backgroundColor = customColor;
+    });
+
+    //alert(customColor);
+}
+
 // Change values when window is resized 
 window.onresize = function() { 
     ScaleCalculatorToWindow();
@@ -196,4 +218,6 @@ function ScaleCalculatorToWindow() {
     document.getElementsByClassName("calcSection")[0].style.transform = "scale(" + scale + ")";
 }
 
+// scale once the page is first loaded
 ScaleCalculatorToWindow();
+
