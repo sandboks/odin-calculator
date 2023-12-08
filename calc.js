@@ -74,6 +74,7 @@ function AssignOperator(x) {
     if (HaveOperator()) {
         if (b != null) { // if we already entered b, then perform the operation now and then assign the new operator
             operate();
+            displayingAnswer = false;
         }
     }
 
