@@ -1,4 +1,4 @@
-const operators = ["+", "-", "*", "x", "/", "÷"];
+const operators = ["+", "-", "*", "×", "/", "÷"];
 const specialInputs = ["Enter", "=", "c", "."];
 const roundingAmount = 1000000000;
 
@@ -20,7 +20,7 @@ function GetAnswer(a, b, operator) {
         case "-":
             return (a - b);
         case "*":
-        case "x":
+        case "×":
             return (a * b);
         case "/":
         case "÷":
@@ -51,9 +51,9 @@ function Clear() {
 function UpdateDisplay() {
     currentDisplay = a;
     if (HaveOperator()) {
-        currentDisplay += " " + currentOperator;
+        currentDisplay += "" + currentOperator;
         if (b != null)
-            currentDisplay += " " + b;
+            currentDisplay += "" + b;
     }
     //alert("this is where the display should get updated!");
 
@@ -88,6 +88,10 @@ function AddDecimalPoint() {
 
             b += ".";
         }
+    }
+    else if (displayingAnswer) {
+        a = "0.";
+        displayingAnswer = false;
     }
     else {
         if (Number(a) % 1 != 0 || (a + "").slice(-1) == ".")

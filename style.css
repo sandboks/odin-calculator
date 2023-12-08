@@ -34,6 +34,8 @@ body {
 
     padding: 24px;
     padding-top: 24px;
+
+    background-color: #1b1c1d;
 }
 
 a {
@@ -48,16 +50,16 @@ a {
     width: 100%;
     max-height: 400px;
     max-width: 240px;
-    */
     min-height: 14em;
-    min-width: 10em;
+    */
+    width: 9em;
 
     border-radius: 1.5em;
     overflow: hidden;
 
-    border: 2px solid black;
+    border: 4px solid #1779a8;
     
-    background-color: #3a4e6b;
+    background-color: #3a3f47;
 
     /*
     padding: 1em 0px;
@@ -76,6 +78,8 @@ a {
 
 .calcSection button {
     font-size: 1em;
+    cursor: pointer;
+    border: none;
 }
 
 .topSection {
@@ -164,7 +168,7 @@ a {
 }
 
 button.operatorButton {
-    background-color: #353d47;
+    background-color: #1779a8;
 }
 
 button.digitButton {
