@@ -282,9 +282,3 @@ function ScaleCalculatorToWindow() {
 
 // scale once the page is first loaded
 ScaleCalculatorToWindow();
-
-// match user's dark mode settings
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    ToggleDarkMode();
-    darkModeSwitch.checked = true;
-}
