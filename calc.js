@@ -139,7 +139,7 @@ function Backspace() {
     {
         if ((a + "").length == 1)
             a = 0;
-        else if (a != 0) {
+        else {
             a = ("" + a).slice(0, -1)
         }
     }
