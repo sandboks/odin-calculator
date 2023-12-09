@@ -5,7 +5,7 @@ A simple calculator web app completed for The Odin Project.
 https://www.theodinproject.com/lessons/foundations-calculator
 
 # PREVIEW
-![](./img/preview.png)
+![](./preview.png)
 
 # FEATURES
 - Basic calculator functionality
