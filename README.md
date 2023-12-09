@@ -2,10 +2,10 @@
 A simple calculator web app completed for The Odin Project.
 
 # LIVE PREVIEW
-https://www.theodinproject.com/lessons/foundations-calculator
+https://sandboks.github.io/odin-calculator/
 
 # PREVIEW
-![](./img/preview.png)
+![](./preview.png)
 
 # FEATURES
 - Basic calculator functionality
