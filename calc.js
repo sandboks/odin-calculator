@@ -142,6 +142,8 @@ function Backspace() {
         else {
             a = ("" + a).slice(0, -1)
         }
+        if (a == "-")
+            a = 0;
     }
 
     UpdateDisplay();
