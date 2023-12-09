@@ -1,41 +1,18 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     
-    display: -webkit-box;
-    
-    display: -ms-flexbox;
-    
     display: flex;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex: 1;
+    flex-direction: column;
 
     margin: 0px;
     height: 100vh;
 }
 
 .header, .footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
     /*
     width: 100%;
     */
@@ -48,34 +25,18 @@ body {
     text-align: center;
     background-color: white;
     
-    display: -webkit-box;
-    
-    display: -ms-flexbox;
-    
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    -ms-grid-column-align: center;
-        justify-self: center;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    flex: 1;
+    justify-self: center;
+    justify-content: flex-start;
+    align-items: center;
 
     padding: 24px;
     padding-top: 24px;
 
     background-color: #ffffff;
-    -webkit-transition-duration: 0.1s;
-         -o-transition-duration: 0.1s;
-            transition-duration: 0.1s;
+    transition-duration: 0.1s;
 
     gap: 1em;
 }
@@ -89,16 +50,9 @@ a {
 }
 
 .controlsRow {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: row;
+    align-items: center;
     gap: 1em;
 
     border-radius: 20px;
@@ -114,13 +68,7 @@ a {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    /*
-    height: 100%;
-    width: 100%;
-    max-height: 400px;
-    max-width: 240px;
-    min-height: 14em;
-    */
+            
     width: 9em;
 
     border-radius: 1.5em;
@@ -134,16 +82,10 @@ a {
     padding: 1em;
 
     -webkit-box-flex: 0;
-
         -ms-flex-positive: 0;
-
             flex-grow: 0;
-    -webkit-transform-origin: top;
-        -ms-transform-origin: top;
-            transform-origin: top;
-    -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-            transform: scale(1);
+    transform-origin: top;
+    transform: scale(1);
 }
 
 .calcSection {
@@ -163,14 +105,8 @@ a {
         -ms-flex-positive: 1;
             flex-grow: 1;
     
-    -webkit-box-pack: center;
-    
-        -ms-flex-pack: center;
-    
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: center;
+    align-items: center;
 
     padding-bottom: 0.5em
 }
@@ -181,23 +117,15 @@ a {
 }
 
 .displayRow {
-    display:-webkit-box;
-    display:-ms-flexbox;
     display:flex;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    flex: 1;
 
     background-color: white;
     color: black;
 
     font-family:'digital-clock-font';
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: right;
-        -ms-flex-pack: right;
-            justify-content: right;
+    align-items: center;
+    justify-content: right;
     /*
     height: 100%;
     */
@@ -208,9 +136,7 @@ a {
 
     overflow: hidden;
     white-space: nowrap;
-    -webkit-transition-duration: 0.1s;
-         -o-transition-duration: 0.1s;
-            transition-duration: 0.1s;
+    transition-duration: 0.1s;
 }
 
 .displayRowDark {
@@ -223,9 +149,7 @@ a {
 }
 
 .buttonsContainer {
-    -webkit-box-flex: 4;
-        -ms-flex-positive: 4;
-            flex-grow: 4; /* This needs to be the number of rows, update if necessary */
+    flex-grow: 4; /* This needs to be the number of rows, update if necessary */
 }
 
 .buttonsSection {
@@ -254,12 +178,6 @@ a {
 }
 
 .buttonsSection button {
-    /*
-    flex: 1;
-    min-width: 0;
-    min-height: 0;
-    padding: 0;
-    */
     width: 100%; 
     height: 100%;
 
@@ -273,11 +191,7 @@ a {
     cursor: pointer;
     border: none;
 
-    -webkit-transition-duration: 0.1s;
-
-         -o-transition-duration: 0.1s;
-
-            transition-duration: 0.1s;
+    transition-duration: 0.1s;
     font-family:'digital-clock-font';
 
     /*
@@ -294,17 +208,13 @@ a {
 
 .buttonsSection button:hover {
     /*background-color: #7b7f92;*/
-    -webkit-filter: brightness(120%);
-            filter: brightness(120%);
-    -webkit-transform: scale(1.05);
-        -ms-transform: scale(1.05);
-            transform: scale(1.05);
+    filter: brightness(120%);
+    transform: scale(1.05);
 }
 
 .buttonsSection button:active {
     /*background-color: #4b4e5a;*/
-    -webkit-filter: brightness(90%);
-            filter: brightness(90%);
+    filter: brightness(90%);
 }
 
 button.operatorButton {
@@ -324,11 +234,8 @@ button.digitButton {
 }
 
 div.doubleButton {
-    -webkit-box-flex: 2.1;
-        -ms-flex-positive: 2.1;
-            flex-grow: 2.1;
-    -ms-flex-preferred-size: 0;
-        flex-basis: 0;
+    flex-grow: 2.1;
+    flex-basis: 0;
 }
 
 div.doubleButton .digitButton {
@@ -358,12 +265,8 @@ div.buttonContainer {
     width: 2em;
     overflow: hidden;
     border-radius: 50%;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
     display: inline-flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     position: relative;
 }
 
@@ -373,9 +276,7 @@ div.buttonContainer {
     width: 4em;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     overflow: hidden;
     border: none;
     margin: 0;
@@ -408,7 +309,6 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_switch
     bottom: 0;
     background-color: #ccc;
     -webkit-transition: .4s;
-    -o-transition: .4s;
     transition: .4s;
   }
   
@@ -421,7 +321,6 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_switch
     bottom: 4px;
     background-color: white;
     -webkit-transition: .4s;
-    -o-transition: .4s;
     transition: .4s;
   }
   
@@ -430,8 +329,7 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_switch
   }
   
   input:focus + .slider {
-    -webkit-box-shadow: 0 0 1px #2196F3;
-            box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #2196F3;
   }
   
   input:checked + .slider:before {
