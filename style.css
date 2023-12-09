@@ -35,9 +35,13 @@ body {
     padding: 24px;
     padding-top: 24px;
 
-    background-color: #1b1c1d;
+    background-color: #ffffff;
 
     gap: 1em;
+}
+
+.contentDark {
+    background-color: #1b1c1d;
 }
 
 a {
@@ -66,14 +70,11 @@ a {
     border-radius: 1.5em;
     overflow: hidden;
 
-    border: 4px solid #1779a8;
+    border: 4px solid #1f9fef;
     
-    background-color: #3a3f47;
+    background-color: #dddddd;
+    color: black;
 
-    /*
-    padding: 1em 0px;
-    padding-bottom: 1.5em;
-    */
     padding: 1em;
 
     flex-grow: 0;
@@ -83,6 +84,11 @@ a {
 
 .calcSection {
     font-size: 1.5em;
+}
+
+.calcSectionDark {
+    background-color: #3a3f47;
+    color: white;
 }
 
 .calcDisplay {
@@ -101,11 +107,13 @@ a {
 }
 
 .displayRow {
-    flex: 1;
-    background-color: #1d2127;
-    font-family:'digital-clock-font';
-    color: white;
     display:flex;
+    flex: 1;
+
+    background-color: white;
+    color: black;
+
+    font-family:'digital-clock-font';
     align-items: center;
     justify-content: right;
     /*
@@ -120,13 +128,17 @@ a {
     white-space: nowrap;
 }
 
+.displayRowDark {
+    background-color: #1d2127;
+    color: white;
+}
+
 .displayRow {
     font-size: 1em;
 }
 
 .buttonsContainer {
     flex-grow: 4; /* This needs to be the number of rows, update if necessary */
-
 }
 
 .buttonsSection {
@@ -146,18 +158,19 @@ a {
 }
 
 .buttonsSection button {
+    /*
     flex: 1;
-    
     min-width: 0;
     min-height: 0;
     padding: 0;
+    */
     width: 100%; 
     height: 100%;
 
     border-radius: 50%;
 
-    color: white;
-    background-color: #535663;
+    color: black;
+    background-color: #bfbfbf;
 
 
     font-size: 1em;
@@ -165,6 +178,7 @@ a {
     border: none;
 
     transition-duration: 0.1s;
+    font-family:'digital-clock-font';
 
     /*
     width: 100%; 
@@ -172,17 +186,25 @@ a {
     */
 }
 
+.buttonDark button {
+    color: white;
+    background-color: #535663;
+}
+
+
 .buttonsSection button:hover {
-    background-color: #7b7f92;
+    /*background-color: #7b7f92;*/
+    filter: brightness(120%);
     transform: scale(1.05);
 }
 
 .buttonsSection button:active {
-    background-color: #4b4e5a;
+    /*background-color: #4b4e5a;*/
+    filter: brightness(90%);
 }
 
 button.operatorButton {
-    background-color: #1779a8;
+    background-color: #1f9fef;
 }
 
 button.operatorButton:hover {

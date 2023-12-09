@@ -247,6 +247,24 @@ function RecolorCalculator() {
     //alert(customColor);
 }
 
+const modeSwitchBtn = document.querySelector("#darkModeToggle");
+modeSwitchBtn.addEventListener("click", ToggleDarkMode)
+
+function ToggleDarkMode() {
+    let calculator = document.querySelector(".calcSection");
+    let content = document.querySelector(".content");
+    let buttonSection = document.querySelector(".buttonsSection");
+    let display = document.querySelector(".displayRow");
+
+    calculator.classList.toggle("calcSectionDark");
+    content.classList.toggle("contentDark");
+    buttonSection.classList.toggle("buttonDark");
+    display.classList.toggle("displayRowDark");
+
+    
+    
+}
+
 // Change values when window is resized 
 window.onresize = function() { 
     ScaleCalculatorToWindow();
@@ -265,3 +283,7 @@ function ScaleCalculatorToWindow() {
 // scale once the page is first loaded
 ScaleCalculatorToWindow();
 
+// match user's dark mode settings
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    ToggleDarkMode();
+}
