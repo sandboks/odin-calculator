@@ -1,6 +1,7 @@
 const operators = ["+", "-", "*", "×", "x", "/", "÷"];
 const specialInputs = ["Enter", "=", "c", ".", "±", "⌫",];
 const roundingDecimalPlaces = 6;
+const errorString = "ERROR";
 
 let a = 0;
 let b = null;
@@ -34,9 +35,15 @@ function operate() {
     if (!HaveOperator() || b == null)
         return;
     
-    let answer = GetAnswer(Number(a), Number(b), currentOperator);
-    answer = Math.round(answer * Math.pow(10, roundingDecimalPlaces))/Math.pow(10, roundingDecimalPlaces);
-    a = answer;
+    if (b == 0) {
+        a = errorString;
+    }
+    else {
+        let answer = GetAnswer(Number(a), Number(b), currentOperator);
+        answer = Math.round(answer * Math.pow(10, roundingDecimalPlaces))/Math.pow(10, roundingDecimalPlaces);
+        a = answer;
+    }
+    
     b = null;
     currentOperator = "";
     displayingAnswer = true;
@@ -66,6 +73,7 @@ function UpdateDisplay() {
 }
 
 function AssignOperator(x) {
+    
     if (["x", "*"].includes(x))
         x = "×";
     if (["/", "÷"].includes(x))
@@ -198,12 +206,23 @@ function ProcessInput(x) {
         UpdateDisplay();
     }
     else if (operators.includes(x)) {
+        if (a == errorString) {
+            return;
+        }
+        
         if (displayingAnswer)
             displayingAnswer = false;
         
         AssignOperator(x);
     }
     else if (specialInputs.includes(x)) {
+        if (a == errorString) {
+            if (x == "c") {
+                Clear();
+            }
+            return;
+        }
+        
         switch (x) {
             case "Enter":
             case "=":
